@@ -56,6 +56,16 @@ var isValidSuduku = function (board) {
     }
   }
   for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {}
+    for (let j = 0; j < 3; j++) {
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) {
+          const cell = board[3 * i + k][3 * j + l];
+          if (cell === ".") continue;
+          if (set.has(cell)) return false;
+          set.add(cell);
+        }
+      }
+    }
   }
+  return true;
 };
