@@ -34,3 +34,16 @@ let duplicatedArray = [9, 9, 111, 2, 3, 4, 4, 5, 7];
 console.log(
   `The duplicates in ${duplicatedArray} are ${findDuplicates(duplicatedArray)}`
 );
+
+// Task 4 isValidSuduku?
+var isValidSuduku = function (board) {
+  for (let i = 0; i < board.length; i++) {
+    const set = new Set();
+    for (let j = 0; j < board.length; j++) {
+      const cell = board[i][j];
+      if (cell === ".") continue;
+      if (set.has(cell)) return false;
+      set.add(cell);
+    }
+  }
+};
